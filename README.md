@@ -5,7 +5,7 @@ The door only unlocks if both an authorized RFID card and the correct keypad pin
 ## How It Works
 1. System waits for an RFID card to be scanned.
 2. If the card UID matches the authorized card, it prompts for a pin on the LCD.
-3. if the pin matches the authorized pin, the servo motor rotates to 'unlock the door'.
+3. If the pin matches the authorized pin, the servo motor rotates to 'unlock the door'.
 4. The LCD displays the current status at each step: waiting for card, enter code & access granted/denied.
 
 ## Hardware Used
@@ -15,13 +15,21 @@ The door only unlocks if both an authorized RFID card and the correct keypad pin
 - 16x2 LCD Display (Parallel, 4-bit)
 - SG90 Servo Motor
 - Breadboard + Jumper Wires
+- 10k Potentiometer (LCD Contrast)
 
 ## Wiring 
-- RFID: VCC -> 5V, RST -> pin 49, SDA -> pin 53.
-- LCD: RS -> Pin 12, E -> Pin 11, D4 -> pin 5, D5 -> pin 4, D6 -> pin 3, D7 -> pin 2.
+- RFID: VCC -> 5V, RST -> pin 49, SDA -> pin 53
+- LCD: RS -> Pin 12, E -> Pin 11, D4 -> pin 5, D5 -> pin 4, D6 -> pin 3, D7 -> pin 2
+- LCD Contrast: V0 -> 10k Potentiometer
 - Keypad Rows: pins 40, 38, 36, 34
 - Keypad Columns: pins 41, 39, 37, 35
 - Servo: pin 8
+
+## Wiring Diagram
+![Wiring Diagram](wiring-image.png)
+
+## Demo
+[Video Demo](https://youtu.be/Vfb1Fkk8XZk)
 
 ## Problems I Ran Into
 - RFID module I own is a clone that would not work on 3.3v like most tutorials show, and as printed on the component itself; I had to run it at 5v to get reliable reads.
